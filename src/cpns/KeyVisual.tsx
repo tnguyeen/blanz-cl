@@ -28,7 +28,7 @@ const KeyVisual = () => {
   }, []);
 
   return (
-    <div className="key_visual relative">
+    <div className="cont relative">
       <Swiper
         effect={"fade"}
         autoplay={{

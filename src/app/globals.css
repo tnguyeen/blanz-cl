@@ -29,7 +29,7 @@ body {
   padding: calc(var(--vh, 1vh) * 4.6875) 5.2083vw calc(var(--vh, 1vh) * 1);
 }
 
-.key_visual {
+.cont {
   height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -40,6 +40,44 @@ body {
 
 .swiper-slide-active .vis_img {
   animation: scale 2s ease;
+}
+
+.abt_img .box1 .bg {
+  background-position: right bottom;
+  animation: about_bg1 32s 1s linear infinite;
+}
+
+.abt_img .box2 .bg {
+  background-position: left bottom;
+  animation: about_bg2 32s 1s linear infinite;
+}
+
+@keyframes about_bg1 {
+  0% {
+    background-position: right bottom;
+  }
+
+  95% {
+    background-position: left bottom;
+  }
+
+  100% {
+    background-position: left bottom;
+  }
+}
+
+@keyframes about_bg2 {
+  0% {
+    background-position: left bottom;
+  }
+
+  95% {
+    background-position: right bottom;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
 }
 
 @keyframes scale {
