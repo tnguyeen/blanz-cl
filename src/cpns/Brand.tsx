@@ -13,8 +13,8 @@ const Brand = () => {
   const minH = 200;
   const maxH = 500;
 
-  const minScale = 1.1
-  const maxScale = 1.8
+  const minScale = 1.1;
+  const maxScale = 1.8;
 
   useGSAP(() => {
     const line = lineRef.current;
@@ -23,7 +23,7 @@ const Brand = () => {
 
     const leftTxtTl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".trigger1",
+        trigger: ".brand .trigger1",
         start: "top center",
       },
     });
@@ -38,30 +38,30 @@ const Brand = () => {
 
     const rightTxtTl2 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".trigger2",
+        trigger: ".brand .trigger2",
         start: "top center",
         toggleActions: "play reverse reverse reverse",
       },
     });
 
-    gsap.to(".sec_title", {
+    gsap.to(".brand .sec_title", {
       x: 0,
       opacity: 1,
       duration: 1,
       scrollTrigger: {
-        trigger: ".trigger1",
+        trigger: ".brand .trigger1",
         start: "top center",
       },
     });
-    gsap.to(".line1", {
+    gsap.to(".brand .line1", {
       width: "100%",
       duration: 1,
       scrollTrigger: {
-        trigger: ".trigger1",
+        trigger: ".brand .trigger1",
         start: "top center",
       },
     });
-    gsap.to(".line2", {
+    gsap.to(".brand .line2", {
       duration: 1,
       scrollTrigger: {
         trigger: ".brand",
@@ -110,7 +110,7 @@ const Brand = () => {
     leftTxtTl.to(".right_txt", { opacity: 1, x: 0, duration: 0.5 });
 
     rightTxtTl.to(".right_txt .t1 span", { y: "100%" });
-    rightTxtTl.to(".right_txt .t2 span", { y: 0 });
+    rightTxtTl.to(".right_txt .t2 span", { y: 0, delay: 0.2 });
 
     rightTxtTl2.to(".right_txt .t2 span", { y: "100%" });
 
@@ -136,7 +136,7 @@ const Brand = () => {
     });
   });
   return (
-    <div className="cont brand relative">
+    <div className="brand relative">
       <div className="trigger trigger1 absolute size-0 -top-40"></div>
       <div className="trigger trigger2 absolute left-0 top-160 size-0"></div>
       <div className="content pl-50">
