@@ -1,41 +1,41 @@
-import React from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react"
+import { useGSAP } from "@gsap/react"
+import { gsap } from "gsap"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css"
+import "swiper/css/effect-fade"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
 
 // import required modules
-import { EffectFade, Autoplay } from "swiper/modules";
-import { RotateArrWh, RotateTxtWh, VisBg1, VisBg2, VisBg3 } from "@/public/index";
-import Image from "next/image";
+import { EffectFade, Autoplay } from "swiper/modules"
+import { RotateArrWh, RotateTxtWh, VisBg1, VisBg2, VisBg3 } from "@/public/index"
+import Image from "next/image"
 
 const KeyVisual = () => {
   useGSAP(() => {
-    gsap.fromTo(".txt_1", {}, { scale: 1, top: 300, right: "50%", delay: 3, duration: 1 });
-    gsap.fromTo(".txt_2", {}, { scale: 1, top: 300, left: "50%", delay: 3, duration: 1 });
-    gsap.fromTo(".scroll", {}, { bottom: "6%", delay: 3.2, duration: 1 });
-    gsap.fromTo(".vis_txt p", { y: 50 }, { y: 0, duration: 2 });
-    gsap.to(".rotate", { rotate: 360, repeat: -1, ease: "none", duration: 7 });
+    gsap.fromTo(".txt_1", {}, { scale: 1, top: 300, right: "50%", delay: 3, duration: 1 })
+    gsap.fromTo(".txt_2", {}, { scale: 1, top: 300, left: "50%", delay: 3, duration: 1 })
+    gsap.fromTo(".scroll", {}, { bottom: "6%", delay: 3.2, duration: 1 })
+    gsap.fromTo(".vis_txt p", { y: 50 }, { y: 0, duration: 2 })
+    gsap.to(".rotate", { rotate: 360, repeat: -1, ease: "none", duration: 7 })
 
-    const swiperTl = gsap.timeline();
-    swiperTl.to(".mySwiper", { scale: 0.3, delay: 1.5, duration: 1 });
-    swiperTl.to(".mySwiper", { scale: 1, delay: 0.5, duration: 1, ease:"power4.out" });
-  }, []);
+    const swiperTl = gsap.timeline()
+    swiperTl.to(".mySwiper", { scale: 0.3, delay: 1.5, duration: 1 })
+    swiperTl.to(".mySwiper", { scale: 1, delay: 0.5, duration: 1, ease: "power4.out" })
+  }, [])
 
   return (
     <div className="cont relative">
       <Swiper
         effect={"fade"}
         autoplay={{
-          delay: 4000,
+          delay: 4000
         }}
         fadeEffect={{
-          crossFade: true,
+          crossFade: true
         }}
         speed={4000}
         modules={[Autoplay, EffectFade]}
@@ -59,7 +59,7 @@ const KeyVisual = () => {
         <Image src={RotateTxtWh} alt="" className="rotate" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default KeyVisual;
+export default KeyVisual

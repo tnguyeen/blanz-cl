@@ -1,26 +1,26 @@
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/SplitText";
-import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap"
+import { useGSAP } from "@gsap/react"
+import { SplitText } from "gsap/SplitText"
+import { useEffect, useRef } from "react"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const TypoText = () => {
-  const textRef = useRef(null);
-  const dasf = useRef<HTMLDivElement>(null);
+  const textRef = useRef(null)
+  const dasf = useRef<HTMLDivElement>(null)
   // const tl = useRef(null);
   const tl = useRef<GSAPTimeline>(
     gsap.timeline({
-      paused: true,
+      paused: true
     })
-  );
-  const lastY = useRef(0);
+  )
+  const lastY = useRef(0)
   const scrollTimeout = useRef(
     setTimeout(() => {
-      tl.current.pause();
+      tl.current.pause()
     }, 50)
-  );
+  )
 
   // useGSAP(() => {
   //   // Split text into characters
@@ -80,8 +80,8 @@ const TypoText = () => {
 
   useGSAP(() => {
     // Split text into characters
-    const split = new SplitText(textRef.current, { type: "chars" });
-    const chars = split.chars;
+    const split = new SplitText(textRef.current, { type: "chars" })
+    const chars = split.chars
 
     // Create timeline (paused)
     // tl.current = gsap.timeline({ paused: true });
@@ -92,53 +92,55 @@ const TypoText = () => {
         yPercent: 0,
         opacity: 1,
         duration: 1.2,
-        stagger: 0.05,
+        stagger: 0.05
       }
-    );
+    )
 
     // Scroll listener
     const handleScroll = () => {
-      const y = window.scrollY;
-      console.log(y);
+      const y = window.scrollY
 
-      if (y < 2800 || y > 3600) return;
-      const delta = y - lastY.current;
+      if (y < 2400 || y > 3600) return
+      const delta = y - lastY.current
 
-      if (Math.abs(delta) < 2) return; // ignore micro scrolls
+      if (Math.abs(delta) < 2) return // ignore micro scrolls
 
       if (delta > 0) {
         // scroll down → play forward
-        tl.current.play();
+        tl.current.play()
       } else {
         // scroll up → reverse
-        tl.current.reverse();
+        tl.current.reverse()
       }
 
-      lastY.current = y;
+      lastY.current = y
 
       // Pause when user stops scrolling
-      clearTimeout(scrollTimeout.current);
-      scrollTimeout.current = setTimeout(() => tl.current.pause(), 50);
-    };
+      clearTimeout(scrollTimeout.current)
+      scrollTimeout.current = setTimeout(() => tl.current.pause(), 50)
+    }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => {
-      split.revert();
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout.current);
-    };
-  }, []);
+      split.revert()
+      window.removeEventListener("scroll", handleScroll)
+      clearTimeout(scrollTimeout.current)
+    }
+  }, [])
 
   return (
-    <div ref={dasf} className="absolute -top-28 left-1/2 -translate-x-1/2 w-4/5 h-100 flex justify-center">
+    <div
+      ref={dasf}
+      className="absolute -top-28 left-1/2 -translate-x-1/2 w-4/5 h-100 flex justify-center"
+    >
       <p>
         <span ref={textRef} className="text-[340px] text-[#b9b9b9] select-none">
           BLANZ
         </span>
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default TypoText;
+export default TypoText
