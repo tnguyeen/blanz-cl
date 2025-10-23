@@ -18,15 +18,25 @@ const Card = ({ mainTypo, subText, bg, id }: CardProps) => {
 
   const tl = useRef<GSAPTimeline>(gsap.timeline({ paused: true }))
 
-  const handleEnter = () => tl.current.play()
-  const handleLeave = () => tl.current.reverse()
+  const handleEnter = () => {
+    gsap.to(fisrtCharRef.current, { color: "#ce6455", duration: 0.2 })
+    tl.current.timeScale(1)
+    tl.current.play()
+  }
+
+  const handleLeave = () => {
+    gsap.to(fisrtCharRef.current, { color: "#fff", duration: 0.2 })
+    tl.current.timeScale(1.4)
+    tl.current.reverse()
+  }
 
   useGSAP(() => {
+    gsap.to(fisrtCharRef.current, { opacity: 1, delay: 0.2 })
     tl.current.to(dimmedRef.current, { opacity: 0.8, duration: 0.2 })
     tl.current.to(fisrtCharRef.current, { scale: 1, duration: 0.3 })
-    tl.current.to(restCharRef.current, { width: "auto", opacity: 1, duration: 0.3 })
+    tl.current.to(restCharRef.current, { width: "auto", opacity: 1, duration: 0.6 })
     tl.current.to(subTextRef.current, { y: 0, duration: 0.3 })
-  }, [])
+  })
   return (
     <>
       <Image
@@ -45,12 +55,12 @@ const Card = ({ mainTypo, subText, bg, id }: CardProps) => {
         onMouseLeave={handleLeave}
       >
         <p className="absolute w-full flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-          <span ref={fisrtCharRef} className="inline-block scale-700 ">
+          <span ref={fisrtCharRef} className="opacity-0 inline-block scale-700 ">
             {mainTypo[0]}
           </span>
           <span
             ref={restCharRef}
-            className="inline-block w-0 opacity-0 overflow-hidden text-nowrap "
+            className="inline-block w-0 opacity-0 overflow-hidden text-nowrap"
           >
             {mainTypo.slice(1)}
           </span>

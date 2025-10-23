@@ -23,16 +23,19 @@ const About = () => {
       }
     })
     imgTl.to(".abt_txt strong", { opacity: 1, x: 0, duration: 0.8 })
-    imgTl.to(".abt_txt strong b", { fontSize: 60, delay: 0.3, duration: 0.8 })
-    imgTl.to(".abt_txt .txt p span", { y: 0 })
+    imgTl.to(".abt_txt strong b", { fontSize: 60, lineHeight: "56px", delay: 0.2, duration: 0.8 })
+    imgTl.to(".abt_txt .t1 p span", { y: 0 })
+    imgTl.to(".abt_txt .t2 p span", { y: 0 })
   })
   return (
     <div className="about py-[10vw] pl-[8vw]">
       <div className="relative size-full">
         <div className="abt_txt absolute top-0 left-0 size-full pt-[5vw] flex items-center">
           <div className="inner flex flex-col justify-center">
-            <strong className="block text-3xl font-normal text-black opacity-0 -translate-x-16">
-              당신은 어떤 <b className="font-medium">삶</b>을 쓰고 있습니까?
+            <strong className="text-3xl font-normal text-black opacity-0 -translate-x-16 h-14 flex items-end">
+              <span className="block">당신은 어떤&nbsp;</span>
+              <b className="font-medium">삶</b>
+              <span className="block">을 쓰고 있습니까?</span>
             </strong>
             <div className="txt t1 mt-36 text-[#555] leading-9">
               {[

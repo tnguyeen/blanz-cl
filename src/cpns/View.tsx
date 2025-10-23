@@ -31,7 +31,7 @@ const View = () => {
         start: "top bottom",
         onUpdate: (self) => {
           if (bgScroll) {
-            bgScroll.style.backgroundPositionY = `${self.progress * 80}%`
+            bgScroll.style.backgroundPositionY = `${self.progress * 20}%`
           }
         }
       }

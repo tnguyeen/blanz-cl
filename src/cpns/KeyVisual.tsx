@@ -16,19 +16,25 @@ import Image from "next/image"
 
 const KeyVisual = () => {
   useGSAP(() => {
-    gsap.fromTo(".txt_1", {}, { scale: 1, top: 300, right: "50%", delay: 3, duration: 1 })
-    gsap.fromTo(".txt_2", {}, { scale: 1, top: 300, left: "50%", delay: 3, duration: 1 })
-    gsap.fromTo(".scroll", {}, { bottom: "6%", delay: 3.2, duration: 1 })
-    gsap.fromTo(".vis_txt p", { y: 50 }, { y: 0, duration: 2 })
-    gsap.to(".rotate", { rotate: 360, repeat: -1, ease: "none", duration: 7 })
+    const visTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vis",
+        start: "60% 70%",
+        end: "40% 30%"
+      }
+    })
 
-    const swiperTl = gsap.timeline()
-    swiperTl.to(".mySwiper", { scale: 0.3, delay: 1.5, duration: 1 })
-    swiperTl.to(".mySwiper", { scale: 1, delay: 0.5, duration: 1, ease: "power4.out" })
+    visTl.to(".vis .vis_txt p", { y: 0, duration: 0.8 }, 0.2)
+    visTl.to(".vis_sd", { scale: 0.3, duration: 1 }, 1)
+    visTl.to(".vis_sd", { scale: 1, duration: 1 }, 2)
+    visTl.to(".rotate", { opacity: 1, bottom: "6%", duration: 0.4 }, 2.2)
+    visTl.to(".rotate .txt", { rotate: 360, repeat: -1, duration: 10, ease: "none" }, 2.2)
+    visTl.to(".vis .vis_txt.t1", { scale: 1, top: 250, right: "50%", duration: 1 }, 2)
+    visTl.to(".vis .vis_txt.t2", { scale: 1, top: 250, left: "50%", duration: 1 }, 2)
   }, [])
 
   return (
-    <div className="cont relative">
+    <div className="cont vis relative">
       <Swiper
         effect={"fade"}
         autoplay={{
@@ -39,7 +45,7 @@ const KeyVisual = () => {
         }}
         speed={4000}
         modules={[Autoplay, EffectFade]}
-        className="mySwiper size-full origin-bottom scale-0"
+        className="vis_sd size-full origin-bottom scale-0"
       >
         {[VisBg1, VisBg2, VisBg3].map((img, index) => (
           <SwiperSlide key={index} className="size-full">
@@ -47,16 +53,16 @@ const KeyVisual = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="vis_txt txt_1 origin-center z-20 absolute top-80 scale-[4] right-[42%] overflow-hidden">
+      <div className="vis_txt t1 origin-center z-20 absolute top-100 scale-[4] right-[42%] overflow-hidden">
         <p className="leading-10 translate-y-[50px] text-4xl font-bold">THE ONLY ONE,</p>
       </div>
-      <div className="vis_txt txt_2 origin-center z-20 absolute top-122 scale-[4] left-[42%] overflow-hidden">
+      <div className="vis_txt t2 origin-center z-20 absolute top-140 scale-[4] left-[42%] overflow-hidden">
         <p className="leading-10 translate-y-[50px] text-4xl font-bold">&nbsp;POETIC CLASS</p>
       </div>
 
-      <div className="scroll absolute left-3/4 bottom-1/12 z-20 h-[5.52vw] w-[5.52vw]">
+      <div className="rotate scroll absolute left-3/4 bottom-1/12 z-20 h-[5.52vw] w-[5.52vw]">
         <Image src={RotateArrWh} alt="" className="absolute" />
-        <Image src={RotateTxtWh} alt="" className="rotate" />
+        <Image src={RotateTxtWh} alt="" className="txt" />
       </div>
     </div>
   )
