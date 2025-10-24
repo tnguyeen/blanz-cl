@@ -44,7 +44,7 @@ const TypoText = () => {
   return (
     <div
       ref={wrapperRef}
-      className="absolute -top-20 left-1/2 -translate-x-1/2 w-4/5 h-140 flex justify-center overflow-hidden"
+      className="absolute -top-18 left-1/2 -translate-x-1/2 w-4/5 h-120 flex justify-center overflow-hidden"
     >
       <p>
         <span ref={textRef} className="text-[340px] text-[#b9b9b9] select-none flex">

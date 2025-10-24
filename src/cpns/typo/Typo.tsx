@@ -41,28 +41,30 @@ const Typo = () => {
     const cardTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".typo .trigger1",
-        start: "top center"
+        start: "top 25%"
       }
     })
 
     cardTl.to(".cards li div", {
-      width: "100%"
+      width: "100%",
+      duration: 1,
     })
     cardTl.to(".ori span", {
       y: 0,
       delay: 0.1
     })
 
-    for (let index = 0; index < cardData.length; index++) {
-      gsap.to(`.card-${index}`, {
-        y: (2 - Math.abs(2 - index)) * -20,
-        scrollTrigger: {
-          trigger: ".typo .trigger2",
-          start: "top center",
-          toggleActions: "play none none reverse"
+    new ScrollTrigger({
+      trigger: ".typo .trigger2",
+      start: "top 70%",
+      onUpdate: (self) => {
+        for (let index = 0; index < cardData.length; index++) {
+          gsap.to(`.card-${index}`, {
+            y: (2 - Math.abs(2 - index)) * -40 * self.progress
+          })
         }
-      })
-    }
+      }
+    })
   })
   return (
     <div className="cont typo relative py-40 px-50">

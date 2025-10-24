@@ -17,7 +17,7 @@ const Location = () => {
       }
     })
     gsap.to(".location .line1", {
-      width: "60%",
+      width: "75%",
       duration: 1,
       scrollTrigger: {
         trigger: ".location .trigger1",
@@ -90,11 +90,11 @@ const Location = () => {
       <div className="trigger trigger1 absolute size-0 left-0 -top-40"></div>
       <div className="trigger trigger2 absolute size-0 left-0 top-0"></div>
       <div className="relative bg-amber-100 w-full">
-        <span className="sec_title absolute bottom-0 left-2/5 text-xl -translate-x-12 opacity-0">
+        <span className="sec_title absolute bottom-2.5 left-[37.5%] text-xl -translate-x-12 opacity-0">
           Location
         </span>
         <span className="line1 absolute bottom-0 right-0 h-[1px] w-0 bg-black"></span>
-        <span className="line2 absolute bottom-0 left-1/2 h-0 w-[1px] bg-black"></span>
+        <span className="line2 absolute bottom-0 left-[42%] h-0 w-[1px] bg-black"></span>
       </div>
       <div className="content pt-50 w-full opacity-0">
         <div className="box box1 relative overflow-hidden h-[350px] w-full">

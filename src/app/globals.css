@@ -52,6 +52,11 @@ body {
   animation: about_bg2 32s 1s linear infinite;
 }
 
+.brand .right_txt .on p span {
+  translate: 0;
+  transition-delay: 0.5s;
+}
+
 @keyframes about_bg1 {
   0% {
     background-position: right bottom;

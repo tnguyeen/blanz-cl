@@ -7,9 +7,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
   useGSAP(() => {
-    gsap.to(".box", {
+    gsap.to(".about .box", {
       y: 0,
       opacity: 1,
+      duration: 1,
       scrollTrigger: {
         trigger: ".abt_img",
         start: "top center"

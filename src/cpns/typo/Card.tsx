@@ -31,7 +31,14 @@ const Card = ({ mainTypo, subText, bg, id }: CardProps) => {
   }
 
   useGSAP(() => {
-    gsap.to(fisrtCharRef.current, { opacity: 1, delay: 0.2 })
+    gsap.to(fisrtCharRef.current, {
+      opacity: 1,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: ".typo .trigger1",
+        start: "top 25%"
+      }
+    })
     tl.current.to(dimmedRef.current, { opacity: 0.8, duration: 0.2 })
     tl.current.to(fisrtCharRef.current, { scale: 1, duration: 0.3 })
     tl.current.to(restCharRef.current, { width: "auto", opacity: 1, duration: 0.6 })
@@ -55,7 +62,7 @@ const Card = ({ mainTypo, subText, bg, id }: CardProps) => {
         onMouseLeave={handleLeave}
       >
         <p className="absolute w-full flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl">
-          <span ref={fisrtCharRef} className="opacity-0 inline-block scale-700 ">
+          <span ref={fisrtCharRef} className="opacity-0 inline-block scale-700">
             {mainTypo[0]}
           </span>
           <span

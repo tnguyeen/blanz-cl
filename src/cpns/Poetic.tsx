@@ -61,7 +61,7 @@ const Poetic = () => {
         if (title && text && img) {
           title.style.bottom = `-${100 + p * 100}px`
           text.style.translate = `0 ${top}px`
-          img.style.backgroundPositionY = `${30 + p * 40}%`
+          img.style.backgroundPositionY = `${10 + p * 40}%`
         }
       }
     })
