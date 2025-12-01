@@ -27,14 +27,14 @@ const KeyVisual = () => {
     visTl.to(".vis .vis_txt p", { y: 0, duration: 0.8 }, 0.2)
     visTl.to(".vis_sd", { scale: 0.3, duration: 1 }, 1)
     visTl.to(".vis_sd", { scale: 1, duration: 1 }, 2)
-    visTl.to(".rotate", { opacity: 1, bottom: "6%", duration: 0.4 }, 2.2)
+    visTl.to(".rotate", { opacity: 1, y: "0", duration: 0.4 }, 2.2)
     visTl.to(".rotate .txt", { rotate: 360, repeat: -1, duration: 10, ease: "none" }, 2.2)
-    visTl.to(".vis .vis_txt.t1", { scale: 1, top: 250, right: "50%", duration: 1 }, 2)
-    visTl.to(".vis .vis_txt.t2", { scale: 1, top: 250, left: "50%", duration: 1 }, 2)
+    visTl.to(".vis .vis_txt.t1", { scale: 1, top: 250, x: "0%", duration: 1 }, 2)
+    visTl.to(".vis .vis_txt.t2", { scale: 1, top: 250, x: "50%", duration: 1 }, 2)
   }, [])
 
   return (
-    <div className="cont vis relative">
+    <section className="cont vis relative">
       <Swiper
         effect={"fade"}
         autoplay={{
@@ -53,18 +53,22 @@ const KeyVisual = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="vis_txt t1 origin-center z-20 absolute top-100 scale-[4] right-[42%] overflow-hidden">
-        <p className="leading-10 translate-y-[50px] text-4xl font-bold">THE ONLY ONE,</p>
+      <div className="vis_txt t1 z-20 absolute top-100 scale-[2] lg:scale-[4] right-1/2 translate-x-1/2 overflow-hidden">
+        <p className="leading-10 translate-y-[50px] text-xl lg:text-4xl lg:font-bold text-nowrap">
+          THE ONLY ONE,
+        </p>
       </div>
-      <div className="vis_txt t2 origin-center z-20 absolute top-140 scale-[4] left-[42%] overflow-hidden">
-        <p className="leading-10 translate-y-[50px] text-4xl font-bold">&nbsp;POETIC CLASS</p>
+      <div className="vis_txt t2 z-20 absolute top-120 lg:top-140 scale-[2] lg:scale-[4] left-1/2 -translate-x-1/2 overflow-hidden">
+        <p className="leading-10 translate-y-[50px] text-xl lg:text-4xl lg:font-bold text-nowrap">
+          &nbsp;POETIC CLASS
+        </p>
       </div>
 
-      <div className="rotate scroll absolute left-3/4 bottom-1/12 z-20 h-[5.52vw] w-[5.52vw]">
+      <div className="rotate scroll absolute left-3/4 bottom-[4%] lg:bottom-[6%] -translate-y-3 z-20 size-18 lg:h-[5.52vw] lg:w-[5.52vw]">
         <Image src={RotateArrWh} alt="" className="absolute" />
         <Image src={RotateTxtWh} alt="" className="txt" />
       </div>
-    </div>
+    </section>
   )
 }
 

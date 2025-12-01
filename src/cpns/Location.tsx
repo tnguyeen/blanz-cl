@@ -86,7 +86,7 @@ const Location = () => {
     })
   })
   return (
-    <div className="location relative">
+    <section className="location relative">
       <div className="trigger trigger1 absolute size-0 left-0 -top-40"></div>
       <div className="trigger trigger2 absolute size-0 left-0 top-0"></div>
       <div className="relative bg-amber-100 w-full">
@@ -128,7 +128,7 @@ const Location = () => {
           </dd>
         </dl>
       </div>
-    </div>
+    </section>
   )
 }
 

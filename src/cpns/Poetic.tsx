@@ -68,7 +68,7 @@ const Poetic = () => {
   })
 
   return (
-    <div className="poetic">
+    <section className="poetic !overflow-x-visible overflow-y-visible">
       <div className="area1 pl-50">
         <div className="inner relative my-0 mx-auto w-full">
           <div className="sec_tit left-0 top-4 text-[#2a3942] absolute opacity-0 -translate-x-10">
@@ -127,7 +127,7 @@ const Poetic = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

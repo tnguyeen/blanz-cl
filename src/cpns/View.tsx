@@ -39,7 +39,7 @@ const View = () => {
   })
 
   return (
-    <div className="view pt-50 pb-75">
+    <section className="view pt-50 pb-75">
       <div className="content flex items-end gap-[110px]">
         <div className="img w-[960px] relative">
           <div className="box box1 overflow-hidden w-full h-[366px]">
@@ -87,7 +87,7 @@ const View = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

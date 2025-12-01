@@ -12,7 +12,7 @@ const Header = () => {
     <header className="header padding-header absolute top-0 left-0 z-20">
       <div className="flex">
         <a href="#">
-          <Image src={LogoBl} alt="logo" width={100} />
+          <Image src={LogoBl} alt="logo" width={100} className="w-14 lg:w-25" />
         </a>
       </div>
     </header>

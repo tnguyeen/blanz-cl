@@ -76,7 +76,7 @@ const Brand = () => {
   }, [])
 
   return (
-    <div className="brand relative">
+    <section className="brand relative">
       <div className="trigger trigger1 absolute size-0 -top-40"></div>
       <div className="trigger trigger2 absolute left-0 top-160 size-0"></div>
       <div className="content pl-50">
@@ -148,7 +148,7 @@ const Brand = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

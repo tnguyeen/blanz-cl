@@ -25,6 +25,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .padding-header {
   padding: calc(var(--vh, 1vh) * 4.6875) 5.2083vw calc(var(--vh, 1vh) * 1);
 }

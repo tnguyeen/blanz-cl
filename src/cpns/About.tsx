@@ -29,7 +29,7 @@ const About = () => {
     imgTl.to(".abt_txt .t2 p span", { y: 0 })
   })
   return (
-    <div className="about py-[10vw] pl-[8vw]">
+    <section className="about py-[10vw] pl-[8vw]">
       <div className="relative size-full">
         <div className="abt_txt absolute top-0 left-0 size-full pt-[5vw] flex items-center">
           <div className="inner flex flex-col justify-center">
@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

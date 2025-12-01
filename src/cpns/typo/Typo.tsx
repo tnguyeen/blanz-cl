@@ -67,7 +67,7 @@ const Typo = () => {
     })
   })
   return (
-    <div className="cont typo relative py-40 px-50">
+    <section className="cont typo relative py-40 px-50">
       <div className="trigger1 absolute size-0 left-0 -top-3"></div>
       <div className="trigger2 absolute size-0 left-0 bottom-1/20"></div>
       <div className="relative inner w-full">
@@ -94,7 +94,7 @@ const Typo = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

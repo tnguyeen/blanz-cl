@@ -31,7 +31,7 @@ const Gallery = () => {
     })
   })
   return (
-    <div className="gallery py-100 px-24 pb-60">
+    <section className="gallery py-100 px-24 pb-60">
       <ul className="flex gap-4.5 list-none relative">
         {imgData.map((img, index) => (
           <li
@@ -47,7 +47,7 @@ const Gallery = () => {
         <span className="block trigger1 size-0 absolute left-0 bottom-0"></span>
 
       </ul>
-    </div>
+    </section>
   )
 }
 
